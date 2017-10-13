@@ -1,6 +1,11 @@
+Syncthing
+
+https://syncthing.net/
+
 Based on Alpine Linux
+
 https://hub.docker.com/r/multiarch/alpine/
 
-Syncthing
-https://syncthing.net/
+Total image size is around 12MB
+
 
