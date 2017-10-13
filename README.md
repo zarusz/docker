@@ -6,6 +6,6 @@ This repository has a set of subjective docker images for:
 
 Check out https://hub.docker.com/u/zarusz
 
-If you find it useful feel free to clone and modify.
+Feel free to clone and modify.
 
 License: Apache 2.0
