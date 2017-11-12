@@ -4,6 +4,7 @@ FROM multiarch/alpine:armhf-v3.6
 RUN addgroup -g 1000 syncthing \
     && echo 'syncthing:x:1000:1000::/var/syncthing:/sbin/nologin' >> /etc/passwd \    
     && mkdir /var/syncthing \
+    && mkdir /var/syncthing/sync \
     && mkdir /var/syncthing/config \
     && chown -R syncthing /var/syncthing \
     && chgrp -R syncthing /var/syncthing
