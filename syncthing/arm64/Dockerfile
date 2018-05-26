@@ -12,7 +12,7 @@ RUN addgroup -g 1000 syncthing \
 RUN apk add --update curl jq && \
     rm -rf /var/cache/apk/*
 
-ENV release= \
+ENV release=v0.14.47 \
     arch=arm64
 
 RUN set -x \
@@ -27,5 +27,5 @@ RUN set -x \
 #USER syncthing
 ENV STNOUPGRADE=1
 ENTRYPOINT ["/syncthing/syncthing", "-home", "/var/syncthing/config", "-gui-address", "0.0.0.0:8384"]
-#CMD ["/bin/sh"]
+
 
