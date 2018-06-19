@@ -37,16 +37,16 @@ docker run --rm --privileged --device=/dev/sda:/dev/sda -it zarusz/sdparm:arm64 
 Then play with the settings:
 
 ```
-sdparm --flexible -6 -l --save --set SCT=54000 --set STANDBY=1 /dev/sda
-sdparm --flexible -6 -l --set SCT=54000 --set STANDBY=1 /dev/sda
-
 sdparm --flexible -6 -l --set SCT=54000  /dev/sda
 sdparm --flexible -6 -l --set STANDBY=1 /dev/sda
-sdparm --flexible -6 -l --save --set SCT=54000  /dev/sda
+sdparm --flexible -6 -l --save --set SCT=54000 /dev/sda
 sdparm --flexible -6 -l --save --set STANDBY=1 /dev/sda
 
 sdparm --flexible -6 -l --get SCT /dev/sda
 sdparm --flexible -6 -l --get STANDBY /dev/sda
+
+sdparm --flexible -6 -l --save --set SCT=54000 --set STANDBY=1 /dev/sda
+sdparm --flexible -6 -l --set SCT=54000 --set STANDBY=1 /dev/sda
 ```
 
 More details see:
