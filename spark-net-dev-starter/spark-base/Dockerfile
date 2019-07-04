@@ -11,7 +11,7 @@ ENV SPARK_DOTNET_VERSION=0.3.0
 
 # Install Scala
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
-    apk add --no-cache bash curl jq && \
+    apk add --no-cache bash curl jq procps coreutils && \
     cd "/tmp" && \
     wget --no-verbose "https://downloads.typesafe.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz" && \
     tar xzf "scala-${SCALA_VERSION}.tgz" && \
@@ -34,9 +34,10 @@ RUN export PATH="/usr/local/sbt/bin:$PATH" && \
 RUN apk add --no-cache python3
 
 # Install Spark
-RUN wget --no-verbose -O spark.tgz http://ftp.man.poznan.pl/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
-    tar -xvzf spark.tgz && \
-    rm spark.tgz
+RUN wget --no-verbose -O spark.tgz http://ftp.man.poznan.pl/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+    && mkdir /spark \
+    && tar -xvzf spark.tgz -C /spark --strip-components=1 \
+    && rm spark.tgz
 
 # Install .NET Core 2.1 Runtime (see https://github.com/dotnet/dotnet-docker/blob/master/2.1/runtime/alpine3.9/amd64/Dockerfile)
 # For SDK: https://github.com/dotnet/dotnet-docker/blob/master/2.1/sdk/alpine3.9/amd64/Dockerfile
