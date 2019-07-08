@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  spark-submit:
+    image: zarusz/spark-dotnet-submit:latest
+    container_name: spark-dotnet-submit
+    ports:
+      - "8081:8081"
+    volumes:
+       - C:/Users/tomasz/dev/container/spark/apps:/opt/spark-apps
+       - C:/Users/tomasz/dev/container/spark/data:/opt/spark-data
+       - C:/Users/tomasz/dev/container/spark/logs:/spark/logs
+    environment:
+      - "SPARK_LOCAL_IP=spark-master"
+      - "SPARK_MASTER=spark://localhost:7077"

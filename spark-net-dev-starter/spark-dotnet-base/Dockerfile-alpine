@@ -56,3 +56,6 @@ RUN wget --no-verbose -O Microsoft.Spark.Worker.tar.gz https://github.com/dotnet
     && rm Microsoft.Spark.Worker.tar.gz \
     && export DOTNET_WORKER_DIR="/usr/share/Microsoft.Spark.Worker"
 
+# This was prebuild (https://github.com/dotnet/spark/blob/master/docs/building/ubuntu-instructions.md#building-spark-net-scala-extensions-layer)
+COPY microsoft-spark-2.3.x-0.3.0.jar /usr/share/Microsoft.Spark.Worker
+COPY microsoft-spark-2.4.x-0.3.0.jar /usr/share/Microsoft.Spark.Worker
