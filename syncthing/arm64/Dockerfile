@@ -12,7 +12,7 @@ RUN addgroup -g 1000 syncthing \
 RUN apk add --update curl jq && \
     rm -rf /var/cache/apk/*
 
-ENV release=v1.1.4 \
+ENV release=v1.2.0 \
     arch=arm64
 
 RUN set -x \
