@@ -1,4 +1,4 @@
-FROM multiarch/alpine:aarch64-v3.6
+FROM multiarch/alpine:armhf-v3.10
 
 RUN addgroup -g 1000 mosquitto \
     && echo 'mosquitto:x:1000:1000::/mosquitto:/sbin/nologin' >> /etc/passwd \  

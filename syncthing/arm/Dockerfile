@@ -1,5 +1,5 @@
 # https://raw.githubusercontent.com/syncthing/docker/master/Dockerfile
-FROM multiarch/alpine:armhf-v3.6
+FROM multiarch/alpine:armhf-v3.10
 
 RUN addgroup -g 1000 syncthing \
     && echo 'syncthing:x:1000:1000::/var/syncthing:/sbin/nologin' >> /etc/passwd \    
@@ -12,7 +12,7 @@ RUN addgroup -g 1000 syncthing \
 RUN apk add --update curl jq && \
     rm -rf /var/cache/apk/*
 
-ENV release=v0.14.47 \
+ENV release=v1.3.0 \
     arch=arm
 
 RUN set -x \
@@ -27,3 +27,5 @@ RUN set -x \
 #USER syncthing
 ENV STNOUPGRADE=1
 ENTRYPOINT ["/syncthing/syncthing", "-home", "/var/syncthing/config", "-gui-address", "0.0.0.0:8384"]
+
+
