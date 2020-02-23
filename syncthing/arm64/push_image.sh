@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker push zarusz/syncthing:v1.3.1-arm64
+docker push zarusz/syncthing:v1.3.4-arm64
