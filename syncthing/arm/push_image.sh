@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker push zarusz/syncthing:v1.3.4-armhf
+docker push zarusz/syncthing:v1.16.1-armhf
